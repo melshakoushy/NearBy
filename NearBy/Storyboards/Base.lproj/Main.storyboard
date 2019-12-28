@@ -19,9 +19,25 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72e-QN-jdl" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Ybc-7Z-gmZ"/>
+                                    <constraint firstAttribute="width" constant="150" id="thA-Q1-lLb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.12175092846155167" green="0.57694482803344727" blue="0.089666731655597687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="circleStrokeSpin"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="72e-QN-jdl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6If-Kb-3vc"/>
+                            <constraint firstItem="72e-QN-jdl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9bo-6W-7ra"/>
                             <constraint firstItem="XI4-Ks-p6M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bgj-X5-ZfL"/>
                             <constraint firstItem="XI4-Ks-p6M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MZF-7a-8Gq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XI4-Ks-p6M" secondAttribute="bottom" id="duP-w8-7AX"/>
@@ -47,6 +63,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="indecator" destination="72e-QN-jdl" id="yL9-KE-ZKm"/>
                         <outlet property="singleUpdateBtn" destination="GJo-0z-fTn" id="o3p-9C-Mn4"/>
                         <outlet property="tableView" destination="XI4-Ks-p6M" id="rQo-3S-01H"/>
                     </connections>

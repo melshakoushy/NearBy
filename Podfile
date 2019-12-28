@@ -9,5 +9,6 @@ target 'NearBy' do
 pod 'Alamofire'
 pod 'AlamofireImage'
 pod 'SwiftyJSON'
+pod 'NVActivityIndicatorView'
 
 end

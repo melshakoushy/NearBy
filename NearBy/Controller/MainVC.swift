@@ -11,12 +11,14 @@ import MapKit
 import CoreLocation
 import Alamofire
 import AlamofireImage
+import NVActivityIndicatorView
 
 class MainVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var singleUpdateBtn: UIButton!
+    @IBOutlet weak var indecator: NVActivityIndicatorView!
     
     //Constants
     let placeCellId = "PlaceCell"
@@ -35,6 +37,9 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isHidden = true
+        indecator.isHidden = false
+        indecator.startAnimating()
         setupTableView()
         setupLocation()
         setupView()
@@ -128,7 +133,11 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
 
                 }
                 self.venuId = venus[indexPath.row].id
+                indecator.stopAnimating()
+                indecator.isHidden = true
+                self.tableView.isHidden = false
                 return cell
+
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: errorCellId, for: indexPath) as! ErrorCell
